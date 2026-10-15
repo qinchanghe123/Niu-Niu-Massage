@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#251916">
+  <meta name="description" content="Niu Niu Massage in Stockton, CA. Essential Oil Massage and Thai Back Massage, open daily from 9 AM to 10 PM. Call (209) 313-6042.">
+  <title>Niu Niu Massage | Stockton, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #251916;
+      --ink-soft: #49352f;
+      --wine: #6b263b;
+      --wine-dark: #35171f;
+      --rose: #b97983;
+      --blush: #ead2cf;
+      --cream: #f7f1e9;
+      --paper: #fffaf4;
+      --gold: #c7a46b;
+      --gold-light: #e7cf9d;
+      --line: rgba(68, 43, 35, 0.15);
+      --shadow: 0 24px 70px rgba(43, 22, 18, 0.14);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --container: min(1180px, calc(100% - 44px));
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    .container { width: var(--container); margin-inline: auto; }
+    .section { padding: clamp(78px, 10vw, 140px) 0; position: relative; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      color: var(--wine);
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .eyebrow.on-dark { color: var(--gold-light); }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-weight: 400; }
+
+    h1, h2, .display {
+      font-family: "Italiana", Georgia, serif;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    h1 { font-size: clamp(3.6rem, 8.5vw, 8rem); margin-bottom: 28px; }
+    h2 { font-size: clamp(2.75rem, 6vw, 5.5rem); margin-bottom: 28px; }
+    h3 { font-family: "Italiana", Georgia, serif; font-size: clamp(1.55rem, 2.5vw, 2.25rem); line-height: 1.15; }
+
+    .lede {
+      max-width: 650px;
+      color: #705e57;
+      font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+    }
+
+    .button {
+      min-height: 54px;
+      padding: 0 26px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--paper); background: var(--wine); box-shadow: 0 12px 32px rgba(107, 38, 59, 0.25); }
+    .button-primary:hover { background: #7d3048; }
+    .button-light { color: var(--ink); background: var(--paper); }
+    .button-light:hover { background: var(--gold-light); }
+    .button-ghost { border-color: rgba(255,255,255,0.55); color: white; background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); }
+    .button-ghost:hover { background: rgba(255,255,255,0.16); }
+
+    .icon { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      transition: background-color 250ms ease, color 250ms ease, box-shadow 250ms ease;
+    }
+
+    .site-header.scrolled {
+      color: var(--ink);
+      background: rgba(255, 250, 244, 0.94);
+      border-color: var(--line);
+      box-shadow: 0 10px 35px rgba(35, 23, 18, 0.08);
+      backdrop-filter: blur(15px);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Italiana", Georgia, serif;
+      font-size: 1.2rem;
+      transition: border-color 250ms ease;
+    }
+    .scrolled .brand-mark { border-color: var(--gold); }
+    .brand-name { font-family: "Italiana", Georgia, serif; font-size: 1.17rem; letter-spacing: 0.04em; }
+
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 34px); }
+    .nav-links > a:not(.button) { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; position: relative; }
+    .nav-links > a:not(.button)::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 1px; background: currentColor; transition: width 180ms ease; }
+    .nav-links > a:not(.button):hover::after { width: 100%; }
+    .header-call { min-height: 44px; padding-inline: 19px; color: var(--ink); background: var(--gold-light); }
+
+    .menu-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      cursor: pointer;
+    }
+    .scrolled .menu-button { background: rgba(107, 38, 59, 0.08); }
+    .menu-button span { width: 19px; height: 1px; margin: 5px auto; display: block; background: currentColor; transition: transform 180ms ease, opacity 180ms ease; }
+    .menu-open .menu-button span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-open .menu-button span:last-child { transform: translateY(-3px) rotate(-45deg); }
+
+    .hero {
+      min-height: 96svh;
+      color: white;
+      background-color: #211714;
+      isolation: isolate;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image: url("2.jpg");
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.045);
+      transition: opacity 800ms ease, transform 7s ease;
+    }
+
+    .hero-bg.fade { opacity: 0.18; transform: scale(1.01); }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(27,16,14,0.89) 0%, rgba(27,16,14,0.62) 46%, rgba(27,16,14,0.15) 78%),
+        linear-gradient(0deg, rgba(27,16,14,0.58) 0%, transparent 50%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -38% auto;
+      width: 55vw;
+      height: 55vw;
+      z-index: -1;
+      background: rgba(153, 70, 90, 0.22);
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .hero-inner {
+      min-height: 96svh;
+      padding: 150px 0 90px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 50px;
+    }
+
+    .hero-copy { max-width: 850px; }
+    .hero-copy h1 span { color: var(--gold-light); font-style: italic; }
+    .hero-copy > p:not(.eyebrow) { max-width: 610px; margin-bottom: 34px; color: rgba(255,255,255,0.78); font-size: clamp(1.05rem, 1.7vw, 1.25rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+
+    .hero-aside {
+      min-width: 170px;
+      padding: 28px 0 8px 30px;
+      border-left: 1px solid rgba(255,255,255,0.35);
+    }
+    .hero-aside span { display: block; color: rgba(255,255,255,0.58); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .hero-aside strong { display: block; margin: 6px 0 21px; font-family: "Italiana", Georgia, serif; font-size: 1.35rem; font-weight: 400; }
+
+    .scroll-cue {
+      position: absolute;
+      right: 30px;
+      bottom: 28px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.66);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+    .scroll-cue::after { content: ""; width: 1px; height: 55px; margin-top: 8px; background: linear-gradient(white, transparent); }
+
+    .trust-strip { background: var(--wine-dark); color: white; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-item { min-height: 112px; padding: 24px clamp(16px, 3vw, 40px); display: flex; align-items: center; gap: 15px; border-right: 1px solid rgba(255,255,255,0.13); }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item svg { width: 26px; color: var(--gold-light); }
+    .trust-item strong { display: block; font-family: "Italiana", Georgia, serif; font-size: 1.1rem; font-weight: 400; }
+    .trust-item span { display: block; color: rgba(255,255,255,0.54); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .about { overflow: hidden; }
+    .about::before { content: "Niu Niu"; position: absolute; left: -30px; top: 60px; color: rgba(107,38,59,0.035); font-family: "Italiana", Georgia, serif; font-size: clamp(8rem, 19vw, 18rem); line-height: 1; white-space: nowrap; pointer-events: none; }
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: clamp(55px, 9vw, 120px); }
+
+    .about-media { min-height: 620px; position: relative; }
+    .about-main { width: 78%; height: 565px; margin-left: auto; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    .about-inset { width: 48%; height: 300px; position: absolute; left: 0; bottom: -25px; object-fit: cover; border: 10px solid var(--cream); border-radius: 28px; box-shadow: 0 18px 45px rgba(35, 23, 18, 0.18); }
+    .about-badge { width: 138px; height: 138px; position: absolute; top: 45px; left: 7%; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--wine); box-shadow: 0 15px 40px rgba(107,38,59,0.28); text-align: center; }
+    .about-badge span { max-width: 86px; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; line-height: 1.5; text-transform: uppercase; }
+
+    .about-copy h2 { max-width: 620px; }
+    .about-copy .lede { margin-bottom: 36px; }
+    .detail-list { margin: 0 0 38px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 28px; }
+    .detail-list li { padding-top: 16px; border-top: 1px solid var(--line); }
+    .detail-list strong { display: block; margin-bottom: 4px; font-size: 0.86rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .detail-list span { color: #7a6962; font-size: 0.88rem; }
+
+    .experience { color: white; background: var(--ink); overflow: hidden; }
+    .experience::before, .experience::after { content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(110px); opacity: 0.22; }
+    .experience::before { top: -260px; left: -160px; background: var(--rose); }
+    .experience::after { right: -240px; bottom: -280px; background: var(--gold); }
+    .experience-head { max-width: 780px; margin-bottom: 62px; position: relative; z-index: 1; }
+    .experience-head p { max-width: 600px; color: rgba(255,255,255,0.62); }
+    .experience-grid { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; z-index: 1; }
+    .experience-card { min-height: 310px; padding: 34px 28px; border: 1px solid rgba(255,255,255,0.14); border-right: 0; display: flex; flex-direction: column; justify-content: space-between; transition: background-color 200ms ease, transform 200ms ease; }
+    .experience-card:last-child { border-right: 1px solid rgba(255,255,255,0.14); }
+    .experience-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-6px); }
+    .experience-number { color: var(--gold-light); font-family: "Italiana", Georgia, serif; font-size: 1.4rem; }
+    .experience-card h3 { margin-bottom: 13px; color: #fff8f0; }
+    .experience-card p { margin-bottom: 0; color: rgba(255,255,255,0.58); font-size: 0.9rem; }
+
+    .services { background: var(--paper); }
+    .section-head { margin-bottom: 56px; display: flex; align-items: end; justify-content: space-between; gap: 40px; }
+    .section-head h2 { margin-bottom: 0; }
+    .section-head .lede { max-width: 500px; margin-bottom: 7px; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .service-card { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--cream); overflow: hidden; box-shadow: 0 12px 40px rgba(43,22,18,0.07); }
+    .service-carousel { height: 340px; background: #352822; position: relative; overflow: hidden; }
+    .service-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 700ms ease, transform 5s ease; }
+    .service-slide.active { opacity: 1; transform: scale(1); }
+    .carousel-controls { position: absolute; right: 18px; bottom: 18px; z-index: 3; display: flex; gap: 8px; }
+    .carousel-button { width: 42px; height: 42px; padding: 0; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; display: grid; place-items: center; color: white; background: rgba(28,17,14,0.35); backdrop-filter: blur(8px); cursor: pointer; transition: background-color 180ms ease; }
+    .carousel-button:hover { background: var(--wine); }
+    .service-index { position: absolute; left: 22px; top: 22px; z-index: 3; padding: 7px 13px; border-radius: 999px; color: white; background: rgba(28,17,14,0.55); backdrop-filter: blur(8px); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .service-content { padding: clamp(28px, 4vw, 48px); }
+    .service-content h3 { margin-bottom: 14px; font-size: clamp(2rem, 3.5vw, 3rem); }
+    .service-content > p { max-width: 560px; color: #735f57; }
+    .price-list { margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .price-list li { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); }
+    .price-list span { color: #75645d; font-size: 0.87rem; text-transform: uppercase; letter-spacing: 0.09em; }
+    .price-list strong { font-family: "Italiana", Georgia, serif; color: var(--wine); font-size: 1.4rem; font-weight: 400; }
+    .service-foot { margin-top: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .service-foot small { max-width: 280px; color: #88766e; }
+
+    .loyalty {
+      margin-top: 40px;
+      padding: clamp(32px, 6vw, 58px);
+      border-radius: var(--radius-lg);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: clamp(24px, 5vw, 58px);
+      color: white;
+      background: linear-gradient(120deg, #32161f, #742d44);
+      box-shadow: 0 25px 65px rgba(74, 24, 39, 0.24);
+      overflow: hidden;
+      position: relative;
+    }
+    .loyalty::after { content: "04"; position: absolute; right: 2%; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.05); font-family: "Italiana", Georgia, serif; font-size: 14rem; line-height: 1; }
+    .loyalty-icon { width: 76px; height: 76px; border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: grid; place-items: center; color: var(--gold-light); }
+    .loyalty-icon svg { width: 31px; }
+    .loyalty h3 { margin: 0 0 6px; font-size: clamp(1.7rem, 3vw, 2.8rem); }
+    .loyalty p { margin: 0; color: rgba(255,255,255,0.67); }
+    .loyalty .button { position: relative; z-index: 1; }
+
+    .timing {
+      color: white;
+      background: #2a1d19;
+      overflow: hidden;
+    }
+
+    .timing::before {
+      content: "";
+      width: 560px;
+      height: 560px;
+      position: absolute;
+      left: -280px;
+      bottom: -280px;
+      border-radius: 50%;
+      background: rgba(185, 121, 131, 0.15);
+      filter: blur(60px);
+    }
+
+    .timing-intro {
+      margin-bottom: 46px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
+      align-items: center;
+      gap: clamp(45px, 8vw, 100px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timing-copy h2 { max-width: 650px; }
+    .timing-copy > p:not(.eyebrow) { max-width: 560px; color: rgba(255,255,255,0.62); }
+
+    .timing-photo {
+      min-height: 430px;
+      margin: 0;
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(0,0,0,0.26);
+    }
+
+    .timing-photo img { width: 100%; height: 430px; object-fit: cover; }
+    .timing-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(28,17,16,0.7)); }
+    .timing-photo figcaption { position: absolute; z-index: 1; left: 28px; bottom: 24px; color: white; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    .duration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .duration-card {
+      min-height: 400px;
+      padding: clamp(28px, 4vw, 45px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.035);
+      transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease;
+    }
+
+    .duration-card:hover { transform: translateY(-7px); border-color: rgba(231,207,157,0.5); background: rgba(255,255,255,0.07); }
+    .duration-number { color: var(--gold-light); font-family: "Italiana", Georgia, serif; font-size: clamp(4rem, 7vw, 6.2rem); line-height: 0.86; }
+    .duration-unit { margin: 9px 0 28px; color: rgba(255,255,255,0.4); font-size: 0.67rem; letter-spacing: 0.2em; text-transform: uppercase; }
+    .duration-card h3 { margin-bottom: 12px; color: #fff8f0; }
+    .duration-card > p { color: rgba(255,255,255,0.58); font-size: 0.9rem; }
+    .duration-prices { margin-top: auto; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.12); display: grid; gap: 10px; }
+    .duration-prices span { display: flex; justify-content: space-between; gap: 16px; color: rgba(255,255,255,0.66); font-size: 0.75rem; letter-spacing: 0.04em; }
+    .duration-prices strong { color: var(--gold-light); font-size: 0.9rem; }
+
+    .visit-guide {
+      margin-top: 18px;
+      border-radius: 25px;
+      display: grid;
+      grid-template-columns: 0.8fr repeat(3, 1fr);
+      color: var(--ink);
+      background: var(--gold-light);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .visit-guide-title, .visit-step { min-height: 145px; padding: 27px; display: flex; flex-direction: column; justify-content: center; }
+    .visit-guide-title { color: white; background: var(--wine); }
+    .visit-guide-title span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.17em; text-transform: uppercase; }
+    .visit-guide-title strong { margin-top: 5px; font-family: "Italiana", Georgia, serif; font-size: 1.6rem; font-weight: 400; }
+    .visit-step { border-right: 1px solid rgba(74,53,47,0.16); }
+    .visit-step:last-child { border-right: 0; }
+    .visit-step small { color: var(--wine); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .visit-step strong { margin: 7px 0 4px; font-family: "Italiana", Georgia, serif; font-size: 1.25rem; font-weight: 400; }
+    .visit-step span { color: rgba(37,25,22,0.66); font-size: 0.78rem; line-height: 1.45; }
+
+    .gallery { background: #e9dfd3; }
+    .gallery-intro { max-width: 720px; margin-bottom: 52px; }
+    .masonry { columns: 3 300px; column-gap: 18px; }
+    .gallery-item { margin: 0 0 18px; break-inside: avoid; border-radius: 20px; overflow: hidden; background: #d5c6b6; position: relative; box-shadow: 0 10px 35px rgba(45,28,20,0.10); cursor: zoom-in; }
+    .gallery-item img, .gallery-item video { width: 100%; height: auto; transition: transform 500ms cubic-bezier(.2,.8,.2,1), filter 300ms ease; }
+    .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.025); filter: brightness(0.86); }
+    .gallery-item figcaption { position: absolute; inset: auto 18px 16px; color: white; opacity: 0; transform: translateY(8px); transition: opacity 220ms ease, transform 220ms ease; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; pointer-events: none; }
+    .gallery-item:hover figcaption { opacity: 1; transform: translateY(0); }
+    .video-item { cursor: default; }
+    .video-badge { position: absolute; top: 16px; left: 16px; padding: 7px 12px; border-radius: 999px; color: white; background: rgba(36,23,20,0.6); backdrop-filter: blur(10px); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .reviews { background: var(--cream); overflow: hidden; }
+    .reviews-head { width: var(--container); margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+    .reviews-head h2 { margin-bottom: 0; }
+    .review-lines { display: grid; gap: 18px; }
+    .marquee { display: flex; width: max-content; gap: 18px; animation: marquee-left 40s linear infinite; }
+    .marquee.reverse { animation-name: marquee-right; animation-duration: 46s; transform: translateX(-50%); }
+    .marquee:hover { animation-play-state: paused; }
+    .review-card { width: min(430px, 82vw); min-height: 190px; padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); display: flex; flex-direction: column; justify-content: space-between; }
+    .review-card p { margin-bottom: 24px; color: #5e4d47; font-family: Georgia, serif; font-size: 1.05rem; font-style: italic; line-height: 1.6; }
+    .review-meta { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .review-meta strong { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .stars { color: var(--gold); letter-spacing: 0.1em; font-size: 0.75rem; }
+
+    @keyframes marquee-left { to { transform: translateX(calc(-50% - 9px)); } }
+    @keyframes marquee-right { to { transform: translateX(0); } }
+
+    .faq { background: var(--paper); }
+    .faq-grid { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(50px, 10vw, 130px); }
+    .faq-intro { position: sticky; top: 120px; align-self: start; }
+    .faq-intro p { color: #75635c; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { width: 100%; padding: 25px 0; border: 0; display: flex; align-items: center; justify-content: space-between; gap: 25px; color: var(--ink); background: transparent; text-align: left; cursor: pointer; }
+    .faq-question span:first-child { font-family: "Italiana", Georgia, serif; font-size: clamp(1.2rem, 2vw, 1.6rem); }
+    .faq-plus { width: 35px; height: 35px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 50%; position: relative; }
+    .faq-plus::before, .faq-plus::after { content: ""; width: 12px; height: 1px; position: absolute; left: 50%; top: 50%; background: var(--wine); transform: translate(-50%,-50%); transition: transform 180ms ease; }
+    .faq-plus::after { transform: translate(-50%,-50%) rotate(90deg); }
+    .faq-question[aria-expanded="true"] .faq-plus::after { transform: translate(-50%,-50%) rotate(0); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 240ms ease; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { max-width: 640px; margin: 0; padding: 0 55px 25px 0; color: #75635c; }
+    .faq-item.open .faq-answer { grid-template-rows: 1fr; }
+
+    .contact { color: white; background: var(--wine-dark); overflow: hidden; }
+    .contact::before { content: ""; width: 650px; height: 650px; position: absolute; right: -260px; top: -350px; border-radius: 50%; background: rgba(199,164,107,0.12); filter: blur(30px); }
+    .contact-grid { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: clamp(40px, 8vw, 90px); align-items: stretch; position: relative; z-index: 1; }
+    .contact-copy { padding: 25px 0; }
+    .contact-copy h2 { max-width: 560px; }
+    .contact-copy > p:not(.eyebrow) { max-width: 540px; color: rgba(255,255,255,0.62); }
+    .contact-cards { margin: 42px 0; display: grid; gap: 18px; }
+    .contact-card { padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.17); display: grid; grid-template-columns: 36px 1fr; gap: 15px; }
+    .contact-card svg { width: 22px; color: var(--gold-light); margin-top: 2px; }
+    .contact-card span { display: block; margin-bottom: 5px; color: rgba(255,255,255,0.48); font-size: 0.67rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    .contact-card strong, .contact-card a { font-family: "Italiana", Georgia, serif; font-size: 1.24rem; font-weight: 400; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .map-wrap { min-height: 620px; padding: 12px; border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius-lg); background: rgba(255,255,255,0.06); }
+    .map-wrap iframe { width: 100%; height: 100%; min-height: 594px; border: 0; border-radius: 25px; filter: grayscale(0.65) sepia(0.15) contrast(0.95); }
+
+    .site-footer { padding: 50px 0 95px; color: white; background: #1c1110; }
+    .footer-main { padding-bottom: 38px; border-bottom: 1px solid rgba(255,255,255,0.12); display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .footer-main .brand { margin-bottom: 13px; }
+    .footer-main p { margin: 0; color: rgba(255,255,255,0.48); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 13px 28px; }
+    .footer-nav a { color: rgba(255,255,255,0.68); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; gap: 25px; color: rgba(255,255,255,0.42); font-size: 0.75rem; }
+
+    .mobile-call { display: none; }
+
+    .lightbox { position: fixed; inset: 0; z-index: 100; padding: 30px; border: 0; color: white; background: rgba(22,13,12,0.92); backdrop-filter: blur(12px); place-items: center; }
+    .lightbox[open] { display: grid; }
+    .lightbox::backdrop { background: transparent; }
+    .lightbox img { max-width: min(1100px, 92vw); max-height: 84vh; border-radius: 16px; box-shadow: 0 25px 90px rgba(0,0,0,0.45); }
+    .lightbox-close { width: 48px; height: 48px; position: absolute; right: 25px; top: 25px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; color: white; background: rgba(255,255,255,0.08); cursor: pointer; font-size: 1.5rem; }
+
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1020px) {
+      .nav-links { gap: 19px; }
+      .nav-links > a:not(.button) { display: none; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-aside { display: none; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.13); }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-media { max-width: 700px; }
+      .experience-grid { grid-template-columns: repeat(2, 1fr); }
+      .experience-card:nth-child(2) { border-right: 1px solid rgba(255,255,255,0.14); }
+      .experience-card:nth-child(-n+2) { border-bottom: 0; }
+      .service-grid { grid-template-columns: 1fr; max-width: 780px; margin-inline: auto; }
+      .timing-intro { grid-template-columns: 1fr; }
+      .duration-grid { grid-template-columns: 1fr 1fr; }
+      .duration-card:last-child { grid-column: 1 / -1; }
+      .visit-guide { grid-template-columns: repeat(3, 1fr); }
+      .visit-guide-title { grid-column: 1 / -1; min-height: auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .map-wrap { min-height: 480px; }
+      .map-wrap iframe { min-height: 454px; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --container: min(100% - 30px, 1180px); --radius-lg: 25px; }
+      .section { padding: 82px 0; }
+      .site-header { background: linear-gradient(rgba(22,13,12,0.55), transparent); }
+      .site-header.scrolled { background: rgba(255,250,244,0.95); }
+      .nav { min-height: 68px; }
+      .brand-name { font-size: 1rem; }
+      .brand-mark { width: 35px; height: 35px; }
+      .menu-button { display: block; }
+      .nav-links {
+        position: fixed;
+        inset: 68px 0 auto;
+        max-height: 0;
+        padding: 0 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        color: var(--ink);
+        background: var(--paper);
+        box-shadow: 0 20px 40px rgba(35,23,18,0.12);
+        overflow: hidden;
+        transition: max-height 260ms ease, padding 260ms ease;
+      }
+      .menu-open .nav-links { max-height: 520px; padding-block: 18px 24px; }
+      .nav-links > a:not(.button) { display: block; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+      .nav-links .button { margin-top: 15px; }
+
+      .hero { min-height: 100svh; }
+      .hero-inner { min-height: 100svh; padding: 135px 0 74px; align-items: end; }
+      .hero::before { background: linear-gradient(90deg, rgba(27,16,14,0.88), rgba(27,16,14,0.42)), linear-gradient(0deg, rgba(27,16,14,0.7), transparent 55%); }
+      .hero-copy > p:not(.eyebrow) { font-size: 1rem; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .button { flex: 1 1 180px; }
+      .scroll-cue { display: none; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-item { min-height: 90px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.13); }
+      .trust-item:last-child { border-bottom: 0; }
+
+      .about-media { min-height: 485px; }
+      .about-main { width: 86%; height: 430px; }
+      .about-inset { width: 56%; height: 215px; border-width: 7px; }
+      .about-badge { width: 108px; height: 108px; left: 1%; }
+      .detail-list { grid-template-columns: 1fr; }
+
+      .experience-grid { grid-template-columns: 1fr; }
+      .experience-card, .experience-card:nth-child(2), .experience-card:last-child { min-height: 230px; border-right: 1px solid rgba(255,255,255,0.14); border-bottom: 0; }
+      .experience-card:last-child { border-bottom: 1px solid rgba(255,255,255,0.14); }
+
+      .section-head, .reviews-head { display: block; }
+      .section-head .lede { margin-top: 24px; }
+      .service-carousel { height: 280px; }
+      .service-foot { align-items: flex-start; flex-direction: column; }
+      .service-foot .button { width: 100%; }
+      .loyalty { grid-template-columns: 1fr; text-align: center; }
+      .loyalty-icon { margin-inline: auto; }
+      .loyalty .button { width: 100%; }
+
+      .timing-intro { margin-bottom: 30px; }
+      .timing-photo, .timing-photo img { min-height: 300px; height: 300px; }
+      .duration-grid { grid-template-columns: 1fr; }
+      .duration-card, .duration-card:last-child { min-height: 355px; grid-column: auto; }
+      .visit-guide { grid-template-columns: 1fr; }
+      .visit-guide-title { grid-column: auto; }
+      .visit-step { min-height: 120px; border-right: 0; border-bottom: 1px solid rgba(74,53,47,0.16); }
+      .visit-step:last-child { border-bottom: 0; }
+
+      .masonry { columns: 2; column-gap: 10px; }
+      .gallery-item { margin-bottom: 10px; border-radius: 13px; }
+      .gallery-item { cursor: default; }
+      .gallery-item figcaption { opacity: 1; transform: none; padding: 20px 9px 8px; inset: auto 0 0; background: linear-gradient(transparent, rgba(22,13,12,0.7)); font-size: 0.58rem; letter-spacing: 0.07em; }
+      .reviews-head { width: var(--container); }
+      .reviews-head p { margin-top: 24px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-intro { position: static; }
+      .contact-grid { gap: 32px; }
+      .map-wrap { min-height: 390px; }
+      .map-wrap iframe { min-height: 364px; }
+
+      .footer-main { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .site-footer { padding-bottom: 116px; }
+      .mobile-call { min-height: 58px; position: fixed; z-index: 60; left: 14px; right: 14px; bottom: 13px; display: flex; box-shadow: 0 16px 38px rgba(57,19,31,0.38); }
+      .lightbox { display: none !important; }
+    }
+
+    @media (min-width: 580px) and (max-width: 720px) {
+      .masonry { columns: 3; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Niu Niu Massage home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-name">Niu Niu Massage</span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="button header-call" href="tel:+12093136042" aria-label="Call Niu Niu Massage at 209-313-6042">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal visible">
+          <p class="eyebrow on-dark">A quieter pause in Stockton</p>
+          <h1 id="hero-title">Make room<br>to <span>unwind.</span></h1>
+          <p>Step away from the rush and settle into a warm, private space shaped for comfort, stillness, and unhurried relaxation.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="tel:+12093136042">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+              Call (209) 313-6042
+            </a>
+            <a class="button button-ghost" href="#services">View Services</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Quick information">
+          <span>Open daily</span>
+          <strong>9 AM – 10 PM</strong>
+          <span>Location</span>
+          <strong>Stockton, CA</strong>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#about">Discover</a>
+    </section>
+
+    <section class="trust-strip" aria-label="Highlights">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14c0-5 4-9 8-11 4 2 8 6 8 11a8 8 0 1 1-16 0Z"/><path d="M12 7v10M8.5 11.5 12 15l3.5-3.5"/></svg>
+          <div><strong>Quiet Setting</strong><span>A peaceful pause</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 11V7a7 7 0 0 1 14 0v4"/><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 15v2"/></svg>
+          <div><strong>Private Rooms</strong><span>Comfort and calm</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 3 2.1 4.3L19 8l-3.5 3.4.8 4.8-4.3-2.3-4.3 2.3.8-4.8L5 8l4.9-.7L12 3Z"/><path d="M5 19h14"/></svg>
+          <div><strong>Simple Pricing</strong><span>Clear by duration</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong>Open Late</strong><span>Daily until 10 PM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img class="about-main" src="10.jpg" alt="Comfortable lounge at Niu Niu Massage" width="1920" height="1080">
+          <img class="about-inset" src="5.jpg" alt="Warm floral and candle details inside Niu Niu Massage" width="1920" height="1080" loading="lazy">
+          <div class="about-badge"><span>Open daily 9 AM – 10 PM</span></div>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">Welcome in</p>
+          <h2 id="about-title">A calm space for your time to slow down.</h2>
+          <p class="lede">Niu Niu Massage offers a warm, private setting in Stockton where thoughtful details, prepared rooms, and a quiet atmosphere invite you to step away from the day.</p>
+          <ul class="detail-list">
+            <li><strong>Private atmosphere</strong><span>Individual spaces designed for ease and quiet.</span></li>
+            <li><strong>Freshly prepared</strong><span>Neatly arranged rooms and linens for every visit.</span></li>
+            <li><strong>Unhurried choice</strong><span>Select 30, 60, or 90 minutes to suit your day.</span></li>
+            <li><strong>Easy to reach</strong><span>Located on N Pershing Avenue in Stockton.</span></li>
+          </ul>
+          <a class="button button-primary" href="#gallery">Explore the Space</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="experience-head reveal">
+          <p class="eyebrow on-dark">The Niu Niu experience</p>
+          <h2 id="experience-title">Comfort in every quiet detail.</h2>
+          <p>From the moment you arrive to the moment you leave, the environment is arranged around a simple idea: give yourself space to settle, breathe, and rest.</p>
+        </div>
+        <div class="experience-grid reveal">
+          <article class="experience-card"><span class="experience-number">01</span><div><h3>Calm Arrival</h3><p>Enter a welcoming space and take a moment to leave the pace of the day behind.</p></div></article>
+          <article class="experience-card"><span class="experience-number">02</span><div><h3>Private Space</h3><p>Settle into an individual room with a warm, low-lit atmosphere and comfortable setup.</p></div></article>
+          <article class="experience-card"><span class="experience-number">03</span><div><h3>Choose Your Time</h3><p>Select a 30, 60, or 90-minute session according to the pace that feels right for you.</p></div></article>
+          <article class="experience-card"><span class="experience-number">04</span><div><h3>Restful Finish</h3><p>Step back into your day after a quiet, unrushed pause in a peaceful setting.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Services & pricing</p><h2 id="services-title">Choose your pause.</h2></div>
+          <p class="lede">Two focused massage experiences, each available in three straightforward durations. Call us to choose the time that fits your day.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-carousel" data-carousel>
+              <span class="service-index">01 / Essential Oil</span>
+              <img class="service-slide active" src="7.jpg" alt="Private treatment room prepared at Niu Niu Massage" width="1280" height="1707" loading="lazy">
+              <img class="service-slide" src="9.jpg" alt="Warm, softly lit treatment room at Niu Niu Massage" width="1280" height="1707" loading="lazy">
+              <div class="carousel-controls">
+                <button class="carousel-button prev" type="button" aria-label="Previous Essential Oil Massage image">←</button>
+                <button class="carousel-button next" type="button" aria-label="Next Essential Oil Massage image">→</button>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Essential Oil Massage</h3>
+              <p>A soothing option for those seeking a calm, quiet reset. Essential oils complement a comfortable massage experience designed to help you relax and slow down.</p>
+              <ul class="price-list" aria-label="Essential Oil Massage prices">
+                <li><span>30 minutes</span><strong>$40</strong></li>
+                <li><span>60 minutes</span><strong>$60</strong></li>
+                <li><span>90 minutes</span><strong>$90</strong></li>
+              </ul>
+              <div class="service-foot"><small>Ideal when you want a gentle, aromatic pause from a busy day.</small><a class="button button-primary" href="tel:+12093136042">Call Now</a></div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-carousel" data-carousel>
+              <span class="service-index">02 / Thai Back</span>
+              <img class="service-slide active" src="3.jpg" alt="Double treatment room inside Niu Niu Massage" width="1440" height="810" loading="lazy">
+              <img class="service-slide" src="8.jpg" alt="Hallway leading to private treatment rooms at Niu Niu Massage" width="1280" height="1707" loading="lazy">
+              <div class="carousel-controls">
+                <button class="carousel-button prev" type="button" aria-label="Previous Thai Back Massage image">←</button>
+                <button class="carousel-button next" type="button" aria-label="Next Thai Back Massage image">→</button>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Thai Back Massage</h3>
+              <p>A focused experience centered on the back, well suited to long days, desk time, or anyone who wants dedicated attention in a comfortable, private setting.</p>
+              <ul class="price-list" aria-label="Thai Back Massage prices">
+                <li><span>30 minutes</span><strong>$40</strong></li>
+                <li><span>60 minutes</span><strong>$60</strong></li>
+                <li><span>90 minutes</span><strong>$90</strong></li>
+              </ul>
+              <div class="service-foot"><small>A focused choice when your back feels tired from the demands of the day.</small><a class="button button-primary" href="tel:+12093136042">Call Now</a></div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="loyalty reveal" aria-label="Loyalty offer">
+          <div class="loyalty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 7v14M12 7H7.5A2.5 2.5 0 1 1 10 4.5L12 7Zm0 0h4.5A2.5 2.5 0 1 0 14 4.5L12 7Z"/></svg>
+          </div>
+          <div><h3>A little thank-you for returning.</h3><p>Receive a complimentary 30-minute massage after 4 visits.</p></div>
+          <a class="button button-light" href="tel:+12093136042">Call for Details</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section timing" id="duration-guide" aria-labelledby="duration-title">
+      <div class="container">
+        <div class="timing-intro">
+          <div class="timing-copy reveal">
+            <p class="eyebrow on-dark">A simple way to choose</p>
+            <h2 id="duration-title">Two experiences.<br>Three ways to slow down.</h2>
+            <p>Both Essential Oil Massage and Thai Back Massage are available for 30, 60, or 90 minutes. Start with the kind of experience you want, then choose the amount of time your day allows.</p>
+            <a class="button button-light" href="tel:+12093136042">Call to Choose</a>
+          </div>
+          <figure class="timing-photo reveal">
+            <img src="4.jpg" alt="Clean linens and a peaceful interior at Niu Niu Massage" width="1920" height="1080" loading="lazy">
+            <figcaption>Open daily · 9 AM – 10 PM</figcaption>
+          </figure>
+        </div>
+
+        <div class="duration-grid">
+          <article class="duration-card reveal">
+            <span class="duration-number">30</span>
+            <span class="duration-unit">minutes</span>
+            <h3>A quick pause</h3>
+            <p>A concise option when your schedule is full but you still want dedicated time to step away and reset.</p>
+            <div class="duration-prices">
+              <span>Essential Oil Massage <strong>$40</strong></span>
+              <span>Thai Back Massage <strong>$40</strong></span>
+            </div>
+          </article>
+          <article class="duration-card reveal">
+            <span class="duration-number">60</span>
+            <span class="duration-unit">minutes</span>
+            <h3>A balanced hour</h3>
+            <p>A full hour gives you room to settle into the quiet atmosphere without taking over the rest of your day.</p>
+            <div class="duration-prices">
+              <span>Essential Oil Massage <strong>$60</strong></span>
+              <span>Thai Back Massage <strong>$60</strong></span>
+            </div>
+          </article>
+          <article class="duration-card reveal">
+            <span class="duration-number">90</span>
+            <span class="duration-unit">minutes</span>
+            <h3>Unhurried time</h3>
+            <p>Choose the longest session when you want a slower pace and more time set aside entirely for yourself.</p>
+            <div class="duration-prices">
+              <span>Essential Oil Massage <strong>$90</strong></span>
+              <span>Thai Back Massage <strong>$90</strong></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="visit-guide reveal" aria-label="Simple visit guide">
+          <div class="visit-guide-title"><span>Your visit</span><strong>Simple from the start</strong></div>
+          <div class="visit-step"><small>01</small><strong>Call ahead</strong><span>Ask about current availability and choose your service.</span></div>
+          <div class="visit-step"><small>02</small><strong>Arrive with ease</strong><span>Come about 10 minutes early so you have time to settle in.</span></div>
+          <div class="visit-step"><small>03</small><strong>Enjoy your time</strong><span>Step into a prepared room and leave the pace of the day outside.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="gallery-intro reveal">
+          <p class="eyebrow">Inside Niu Niu</p>
+          <h2 id="gallery-title">A look around our space.</h2>
+          <p class="lede">Explore the storefront, lounge, hallways, and private rooms before you arrive.</p>
+        </div>
+        <div class="masonry" id="masonryGallery">
+          <figure class="gallery-item reveal"><img src="1.jpg" alt="Entrance to Niu Niu Massage at 4550 N Pershing Avenue, Suite 105" width="1280" height="1707" loading="lazy"><figcaption>Our entrance</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="3.jpg" alt="A prepared double treatment room" width="1440" height="810" loading="lazy"><figcaption>Prepared with care</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="7.jpg" alt="A private treatment room with fresh linens and rose detail" width="1280" height="1707" loading="lazy"><figcaption>Private comfort</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="2.jpg" alt="Street view of the Niu Niu Massage storefront" width="1702" height="1276" loading="lazy"><figcaption>Find us on N Pershing Avenue</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="4.jpg" alt="Towel shelves and interior hallway at Niu Niu Massage" width="1920" height="1080" loading="lazy"><figcaption>Thoughtful details</figcaption></figure>
+          <figure class="gallery-item video-item reveal">
+            <video src="6.mp4" muted loop autoplay playsinline preload="metadata" aria-label="A short walk through the Niu Niu Massage reception area"></video>
+            <span class="video-badge">Inside the space</span>
+          </figure>
+          <figure class="gallery-item reveal"><img src="8.jpg" alt="Warmly lit hallway to private rooms" width="1280" height="1707" loading="lazy"><figcaption>A warm welcome</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="5.jpg" alt="Floral, candle, and stone decor inside Niu Niu Massage" width="1920" height="1080" loading="lazy"><figcaption>Peaceful accents</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="9.jpg" alt="Warm amber private treatment room" width="1280" height="1707" loading="lazy"><figcaption>Softly lit rooms</figcaption></figure>
+          <figure class="gallery-item reveal"><img src="10.jpg" alt="Niu Niu Massage lounge with sofa and decorative lights" width="1920" height="1080" loading="lazy"><figcaption>The lounge</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="reviews-head reveal">
+        <div><p class="eyebrow">Guest impressions</p><h2 id="reviews-title">The feeling guests remember.</h2></div>
+        <p class="lede">A comfortable space, a warm welcome, and time set aside to truly slow down.</p>
+      </div>
+      <div class="review-lines" aria-label="Guest testimonials">
+        <div class="marquee">
+          <article class="review-card"><p>“The atmosphere felt peaceful from the moment I walked in, and the room was quiet and comfortable.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“Everything was neatly prepared, and I appreciated how easy it was to call and plan my visit.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“A relaxing break after a long day. The softly lit room made it easy to settle in and unwind.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“The location was straightforward to find, the space felt private, and the pace never felt rushed.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“I liked having clear options for 30, 60, or 90 minutes. Simple, comfortable, and calm.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“The atmosphere felt peaceful from the moment I walked in, and the room was quiet and comfortable.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“Everything was neatly prepared, and I appreciated how easy it was to call and plan my visit.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“A relaxing break after a long day. The softly lit room made it easy to settle in and unwind.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“The location was straightforward to find, the space felt private, and the pace never felt rushed.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“I liked having clear options for 30, 60, or 90 minutes. Simple, comfortable, and calm.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+        </div>
+        <div class="marquee reverse">
+          <article class="review-card"><p>“The later hours made it much easier to fit a quiet reset into my schedule.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“The lounge was welcoming, and the private room felt warm, peaceful, and thoughtfully arranged.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“A comfortable neighborhood spot when I need some time away from a busy week.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“I appreciated the calm environment and the straightforward pricing. I knew exactly what to expect.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card"><p>“Clean linens, gentle lighting, and a quiet room made the whole visit feel restful.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“The later hours made it much easier to fit a quiet reset into my schedule.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“The lounge was welcoming, and the private room felt warm, peaceful, and thoughtfully arranged.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“A comfortable neighborhood spot when I need some time away from a busy week.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“I appreciated the calm environment and the straightforward pricing. I knew exactly what to expect.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+          <article class="review-card" aria-hidden="true"><p>“Clean linens, gentle lighting, and a quiet room made the whole visit feel restful.”</p><div class="review-meta"><strong>Guest note</strong><span class="stars">★★★★★</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal">
+          <p class="eyebrow">Before you visit</p>
+          <h2 id="faq-title">A few helpful answers.</h2>
+          <p>Have another question? Call us directly and we will be happy to help.</p>
+          <a class="button button-primary" href="tel:+12093136042">Call (209) 313-6042</a>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true"><span>How early should I arrive?</span><span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-answer"><div><p>Arriving about 10 minutes early gives you time to settle in and speak with us before your session begins.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Can I get a massage if I have an injury?</span><span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-answer"><div><p>If you have an injury, health condition, or recent procedure, please speak with a qualified healthcare professional first and let us know before your visit. Massage is not a substitute for medical care.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>What is your cancellation policy?</span><span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-answer"><div><p>Please call us at (209) 313-6042 for the current cancellation policy or as soon as you know your plans have changed.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Is there parking available?</span><span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-answer"><div><p>The storefront is located in a shopping center on N Pershing Avenue. Please call before your visit if you would like to confirm current parking details.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow on-dark">Visit Niu Niu Massage</p>
+          <h2 id="contact-title">Your quiet hour is closer than you think.</h2>
+          <p>Call us directly to ask about availability. We are open daily and conveniently located on N Pershing Avenue in Stockton.</p>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div><span>Address</span><strong>4550 N Pershing Ave Unit 105<br>Stockton, CA 95207</strong></div>
+            </div>
+            <div class="contact-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+              <div><span>Phone</span><a href="tel:+12093136042">(209) 313-6042</a></div>
+            </div>
+            <div class="contact-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div><span>Hours</span><strong>Daily · 9 AM – 10 PM</strong></div>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-light" href="tel:+12093136042">Call Now</a>
+            <a class="button button-ghost" href="https://www.google.com/maps/dir/?api=1&destination=4550+N+Pershing+Ave+Unit+105%2C+Stockton%2C+CA+95207" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+        <div class="map-wrap reveal">
+          <iframe title="Map showing Niu Niu Massage in Stockton, California" src="https://www.google.com/maps?q=4550+N+Pershing+Ave+Unit+105,+Stockton,+CA+95207&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">N</span><span class="brand-name">Niu Niu Massage</span></a>
+          <p>A warm, private place to pause in Stockton.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Niu Niu Massage. All rights reserved.</span><span>4550 N Pershing Ave Unit 105 · Stockton, CA</span></div>
+    </div>
+  </footer>
+
+  <a class="button button-primary mobile-call" href="tel:+12093136042">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+    Call (209) 313-6042
+  </a>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Gallery image preview">
+    <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+    <img src="" alt="">
+  </dialog>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Niu Niu Massage",
+    "telephone": "+1-209-313-6042",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4550 N Pershing Ave Unit 105",
+      "addressLocality": "Stockton",
+      "addressRegion": "CA",
+      "postalCode": "95207",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    }],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Massage Services",
+      "itemListElement": [
+        {"@type": "OfferCatalog", "name": "Essential Oil Massage"},
+        {"@type": "OfferCatalog", "name": "Thai Back Massage"}
+      ]
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const header = document.getElementById('siteHeader');
+      const menuButton = document.getElementById('menuButton');
+      const navLinks = document.getElementById('navLinks');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      menuButton.addEventListener('click', () => {
+        const open = body.classList.toggle('menu-open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      });
+
+      navLinks.addEventListener('click', (event) => {
+        if (event.target.closest('a')) {
+          body.classList.remove('menu-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Open navigation');
+        }
+      });
+
+      const heroImages = ['2.jpg', '10.jpg', '3.jpg'];
+      const heroBg = document.getElementById('heroBg');
+      let heroIndex = 0;
+      if (!reduceMotion) {
+        setInterval(() => {
+          heroBg.classList.add('fade');
+          setTimeout(() => {
+            heroIndex = (heroIndex + 1) % heroImages.length;
+            heroBg.style.backgroundImage = `url("${heroImages[heroIndex]}")`;
+            heroBg.classList.remove('fade');
+          }, 650);
+        }, 6500);
+      }
+
+      document.querySelectorAll('[data-carousel]').forEach((carousel, carouselIndex) => {
+        const slides = [...carousel.querySelectorAll('.service-slide')];
+        const previous = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+        let index = 0;
+        let timer;
+
+        const showSlide = (nextIndex) => {
+          slides[index].classList.remove('active');
+          index = (nextIndex + slides.length) % slides.length;
+          slides[index].classList.add('active');
+        };
+
+        const start = () => {
+          if (!reduceMotion) timer = setInterval(() => showSlide(index + 1), 5200 + carouselIndex * 600);
+        };
+
+        const restart = () => { clearInterval(timer); start(); };
+        previous.addEventListener('click', () => { showSlide(index - 1); restart(); });
+        next.addEventListener('click', () => { showSlide(index + 1); restart(); });
+        carousel.addEventListener('mouseenter', () => clearInterval(timer));
+        carousel.addEventListener('mouseleave', start);
+        start();
+      });
+
+      document.querySelectorAll('.faq-question').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.faq-item');
+          const open = item.classList.toggle('open');
+          button.setAttribute('aria-expanded', String(open));
+        });
+      });
+
+      const reveals = document.querySelectorAll('.reveal:not(.visible)');
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
+        reveals.forEach((element) => observer.observe(element));
+      } else {
+        reveals.forEach((element) => element.classList.add('visible'));
+      }
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = lightbox.querySelector('img');
+      const closeLightbox = () => lightbox.close();
+      document.querySelectorAll('.gallery-item img').forEach((image) => {
+        image.addEventListener('click', () => {
+          if (window.innerWidth <= 720) return;
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          lightbox.showModal();
+        });
+      });
+      lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
